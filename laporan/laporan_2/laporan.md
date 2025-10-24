@@ -219,6 +219,55 @@ Langkah 1: Import dan Membuat Scanner
 
 #### Analisa dan Pembahasan
 
+1. Import Library Scanner
+
+        import java.util.Scanner;
+        Scanner adalah class di Java yang digunakan untuk membaca input dari keyboard (System.in).
+
+2. Membuat Objek Scanner
+
+         Scanner input = new Scanner(System.in);
+Membuat objek input dari class Scanner agar bisa membaca data yang dimasukkan user.
+
+3. Membaca Input dari User
+
+a. String (teks)
+
+        System.out.print("Masukkan nama Anda: ");
+        String nama = input.nextLine();
+nextLine() digunakan untuk membaca input berupa string (teks lengkap, termasuk spasi).
+
+b. Integer (bilangan bulat)
+
+    System.out.print("Masukkan umur Anda: ");
+    int umur = input.nextInt();
+nextInt() digunakan untuk membaca angka bulat.
+
+c. Double (bilangan desimal)
+
+    System.out.print("Masukkan tinggi Anda (cm): ");
+    double tinggi = input.nextDouble();
+nextDouble() digunakan untuk membaca angka pecahan (desimal).
+
+4. Menampilkan Output
+
+        System.out.println("\n=== DATA ANDA ===");
+        System.out.println("Nama: " + nama);
+        System.out.println("Umur: " + umur + " tahun");
+        System.out.println("Tinggi: " + tinggi + " cm");
+Program menampilkan kembali data yang sudah dimasukkan user.
+
+Contoh jika user mengetik:
+
+        Masukkan nama Anda: Budi
+        Masukkan umur Anda: 21
+        Masukkan tinggi Anda (cm): 170.5
+
+5. Menutup Scanner 
+
+        input.close();
+Digunakan untuk menutup objek Scanner setelah selesai digunakan agar tidak terjadi memory leak.
+
 ### Praktikum 3 -  Struktur Control: Percabangan
 #### Dasar Teori
 Struktur kontrol percabangan digunakan untuk membuat keputusan dalam program. Java menyediakan beberapa statement percabangan:
@@ -401,6 +450,69 @@ langkah3:
 
 #### Analisa dan Pembahasan
 
+1. GradeDemo.java (If-Else If-Else)
+
+~Fungsi: Menentukan grade dan keterangan berdasarkan nilai yang dimasukkan (0–100).
+
+~Logika:
+    if (nilai > 85) → Grade A (Excellent)
+    else if (nilai > 75) → Grade B (Good)
+    else if (nilai > 65) → Grade C (Fair)
+    else if (nilai > 55) → Grade D (Poor)
+    else → Grade E (Fail)
+
+~Kelebihan: Struktur sederhana, mudah dibaca.
+
+~Kelemahan: Tidak memvalidasi apakah input di luar range (misalnya nilai < 0 atau > 100).
+
+~Saran: Tambahkan validasi input agar lebih aman.
+
+2. MenuDemo.java (Switch Case)
+
+~Fungsi: Program menu untuk menghitung luas (Persegi, Lingkaran, Segitiga) atau keluar.
+
+~Logika:
+    Case 1: Persegi → sisi * sisi
+    Case 2: Lingkaran → π * r²
+    Case 3: Segitiga → 0.5 * alas * tinggi
+    Case 4: Keluar
+
+~Default: Pilihan tidak valid
+
+~Kelebihan:
+    Lebih rapi karena menggunakan switch.
+    Mencakup beberapa operasi dalam satu program.
+
+~Kelemahan:
+    Hanya bisa dipakai sekali jalan (program langsung selesai setelah satu perhitungan).
+    Saran: Gunakan while agar menu bisa dipakai berulang kali sampai pilih keluar.
+
+3. NestedIfDemo.java (Nested If)
+
+~Fungsi: Menentukan kategori umur berdasarkan input.
+
+~Logika:
+
+<2 → Bayi
+
+<5 → Balita
+
+<12 → Anak-anak
+
+<19 → Remaja
+
+<59 → Dewasa
+
+≥59 → Lansia
+
+~Jika umur ≤0 → Umur tidak valid
+
+~Kelebihan: Memberikan kategori yang jelas sesuai range umur.
+
+~Kelemahan: Nested if bisa dibuat lebih ringkas dengan if-else if tanpa nesting berlapis.
+
+~Saran: Ganti dengan if-else if linear agar lebih mudah dibaca.
+
 ### Praktikum 4 - Struktur Control: Perulangan
 #### Dasar Teori
 Perulangan (loop) digunakan untuk mengulang eksekusi kode tertentu. Java menyediakan tiga jenis perulangan:
@@ -575,14 +687,183 @@ langkah3:
 
 #### Analisa dan Pembahasan
 
----
+1. Contoh 1: Angka 1–10
+
+        System.out.println("=== Angka 1-10 ===");
+        for (int i = 1; i <= 10; i++) {
+        System.out.print(i + " ");
+        }
+        System.out.println();
+Inisialisasi: i = 1 (mulai dari angka 1).
+
+Kondisi: i <= 10 (selama i masih ≤ 10, loop akan berjalan).
+
+Iterasi: i++ (setiap perulangan, nilai i bertambah 1).
+
+Output: Menampilkan angka 1 sampai 10 dengan spasi.
+
+Output:
+
+    1 2 3 4 5 6 7 8 9 10
+
+2. Contoh 2: Angka Genap 2–20
+
+        System.out.println("\n=== Angka Genap 2-20 ===");
+        for (int i = 2; i <= 20; i += 2) {
+        System.out.print(i + " ");
+        }
+        System.out.println();
+Inisialisasi: i = 2 (mulai dari angka 2).
+
+Kondisi: i <= 20.
+
+Iterasi: i += 2 (bertambah 2 setiap kali loop).
+
+Output: Menampilkan bilangan genap dari 2 sampai 20.
+
+~Output:
+
+    2 4 6 8 10 12 14 16 18 20
+
+3. Contoh 3: Countdown
+
+        System.out.println("\n=== Countdown ===");
+        for (int i = 10; i >= 1; i--) {
+        System.out.print(i + " ");
+        }
+        System.out.println("Start!");
+Inisialisasi: i = 10.
+
+Kondisi: i >= 1.
+
+Iterasi: i-- (dikurangi 1 setiap loop).
+
+Output: Menampilkan angka mundur dari 10 ke 1.
+
+Output:
+
+    10 9 8 7 6 5 4 3 2 1 Start!
+
+4. Contoh 4: Tabel Perkalian 5
+
+        System.out.println("\n=== Tabel Perkalian 5 ===");
+        for (int i = 1; i <= 10; i++) {
+        System.out.println("5 x " + i + " = " + (5 * i));
+        }
+Inisialisasi: i = 1.
+
+Kondisi: i <= 10.
+
+Iterasi: i++.
+
+Output: Menampilkan hasil perkalian 5 dengan angka 1 sampai 10.
+
+Output:
+
+5 x 1 = 5
+5 x 2 = 10
+5 x 3 = 15
+...
+5 x 10 = 50
+
+### While Loop (Tebak Angka)
+
+~angkaRahasia diset ke 7.
+
+~Program meminta user menebak angka dari 1 sampai 10.
+
+~Loop while berjalan terus selama tebakan belum sama dengan angka rahasia.
+
+~Jika tebakan:
+
+< angkaRahasia → tampil "Terlalu kecil!"
+
+< angkaRahasia → tampil "Terlalu besar!"
+
+== angkaRahasia → tampil "Benar!" lalu loop berhenti.
+
+~Kegunaan: cocok untuk kasus jumlah iterasi tidak pasti, misalnya game tebak angka.
+
+~Menggunakan do-while agar menu selalu ditampilkan minimal sekali, meskipun pengguna langsung memilih keluar.
+
+~Pilihan menu:
+
+1. Tampilkan pesan → cetak "Hello, World!".
+
+2. Hitung faktorial → user masukkan angka n, lalu dihitung faktorialnya dengan loop for.
+
+3. Keluar → cetak "Terima kasih!" dan loop berhenti.
+
+Jika input salah → cetak "Pilihan tidak valid!".
+
+### Pola Bintang Segitiga
+
+~Loop luar (i) mengatur jumlah baris (1 sampai 5).
+
+~Loop dalam (j) mencetak * sebanyak nilai i.
+
+~Setelah selesai mencetak bintang di satu baris, println() membuat baris baru.
+
+Output:
+
+        *
+        * *
+        * * * 
+        * * * * 
+        * * * * * 
+
+Contoh 2 – Tabel Perkalian 1–5
+
+        System.out.println("\n=== Tabel Perkalian 1-5 ===");
+        for (int i = 1; i <= 5; i++) {
+        for (int j = 1; j <= 5; j++) {
+        System.out.printf("%3d ", (i * j));
+        }
+        System.out.println();
+        }
+Loop luar (i) untuk baris → angka 1 sampai 5.
+
+Loop dalam (j) untuk kolom → angka 1 sampai 5.
+
+printf("%3d ", (i * j)) mencetak hasil perkalian dengan lebar 3 karakter agar rapi.
+
+Setelah satu baris selesai, pindah ke baris baru.
+
+~Output (Tabel Perkalian 1–5):
+    
+    1   2   3   4   5
+    2   4   6   8  10
+    3   6   9  12  15
+    4   8  12  16  20
+    5  10  15  20  25
+
+~Contoh 3 – Pola Angka 
+
+    System.out.println("\n=== Pola Angka ===");
+    for (int i = 1; i <= 4; i++) {
+    for (int j = 1; j <= i; j++) {
+    System.out.print(j + " ");
+    }
+    System.out.println();
+    }
+
+Loop luar (i) menentukan jumlah baris (1 sampai 4).
+
+Loop dalam (j) mencetak angka dari 1 sampai nilai i.
+
+Baris baru dibuat setelah loop dalam selesai.
+
+Output:
+
+        1
+        1 2
+        1 2 3
+        1 2 3 4
+
 
 ## 3. Kesimpulan
 Java merupakan bahasa pemrograman berorientasi objek yang memiliki keunggulan dalam hal portabilitas, keamanan, dan kemudahan penggunaan. Dengan konsep write once, run anywhere, Java memungkinkan program dijalankan pada berbagai platform tanpa harus melakukan banyak penyesuaian kode.
 Pemahaman dasar pemrograman Java, seperti struktur program, variabel, tipe data, percabangan, perulangan, serta konsep kelas dan objek, menjadi fondasi penting bagi mahasiswa maupun pengembang perangkat lunak. Melalui penguasaan dasar tersebut, 
 pembelajar dapat mengembangkan keterampilan dalam membangun aplikasi yang lebih kompleks dan siap menghadapi tantangan dalam dunia teknologi informasi.
 
-
-## 5. Referensi
-Cantumkan sumber yang Anda baca (buku, artikel, dokumentasi) — minimal 2 sumber. Gunakan format sederhana (judul — URL).
-
+## 4. Referensi
