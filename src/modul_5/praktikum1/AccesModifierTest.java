@@ -1,4 +1,4 @@
-package praktikum1;
+package modul_5.praktikum1;
 
 public class AccesModifierTest {
     public static void main(String[] args) {

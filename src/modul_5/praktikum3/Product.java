@@ -1,4 +1,4 @@
-package praktikum3;
+package modul_5.praktikum3;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

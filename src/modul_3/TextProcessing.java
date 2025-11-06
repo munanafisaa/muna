@@ -1,7 +1,7 @@
 package modul_3;
 import java.util.Scanner;
 
-public class TextProcesing {
+public class TextProcessing {
 
     public static void prosesDataMahasiswa(String data) {
         System.out.println("\n=== PENGOLAHAN DATA MAHASISWA ===");
