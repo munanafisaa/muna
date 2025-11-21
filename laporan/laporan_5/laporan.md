@@ -14,7 +14,7 @@ Encapsulation (Enkapsulasi) adalah salah satu prinsip fundamental dalam Object-O
 1. Buat sebuah package baru di dalam package modul_5 dengan nama praktikum_1
 2. Buat class baru bernama Person dengan berbagai access modifier
 
-        package modul_5.praktikum1;
+        package modul_5.modul_8.praktikum1;
         
         public class Person {
         //private - hanya bisa diakses dalam class ini
@@ -62,7 +62,7 @@ Encapsulation (Enkapsulasi) adalah salah satu prinsip fundamental dalam Object-O
 
 3. Buat class AccessModifierTest untuk testing:
 
-        package modul_5.praktikum1;
+        package modul_5.modul_8.praktikum1;
         
         public class AccesModifierTest {
         public static void main(String[] args) {
@@ -112,7 +112,7 @@ Langkah-langkah:
 1. Buat sebuah package baru di dalam package modul_5 dengan nama praktikum_2
 2. Buat class Mahasiswa dengan getter dan setter lengkap
 
-        package modul_5.praktikum2;
+        package modul_5.modul_8.praktikum2;
         
         public class Mahasiswa {
         // Private attributes
@@ -250,7 +250,7 @@ Langkah-langkah:
            
 3. Buat class GetterSetterTest:
 
-        package modul_5.praktikum2;
+        package modul_5.modul_8.praktikum2;
         
         public class GetterSetterTest {
         public static void main(String[] args) {
@@ -713,7 +713,7 @@ Kelas ini berfungsi untuk menguji aksesibilitas (access modifier) dari atribut d
     person.alamat = "bandung";
     System.out.println("alamat: " + person.alamat);
 
-✅Berhasil, karena AccessModifierTest dan Person ada di package yang sama (modul_5.praktikum1).
+✅Berhasil, karena AccessModifierTest dan Person ada di package yang sama (modul_5.modul_8.praktikum1).
 
 -Akses protected
 

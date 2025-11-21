@@ -24,5 +24,3 @@ package modul_6.praktikum2;
             System.out.println("Beep beep!");
         }
     }
-
-}
